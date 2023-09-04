@@ -1,0 +1,20 @@
+.modal-dialog {
+    position: fixed;
+    top: 100%;
+    left: 250%;
+    transform: translateX(-50%);
+    margin-top: 20px; /* Adjust this value to control the spacing from the top */
+  }
+  .popup {
+    position: fixed;
+    top: 50%; /* Adjust this value to center vertically */
+    left: 50%; /* Adjust this value to center horizontally */
+    transform: translate(-50%, -50%);
+    /* Add more styling as needed */
+  }
+  .hello
+  {
+     background-color: blanchedalmond;
+  } 
+  
+  

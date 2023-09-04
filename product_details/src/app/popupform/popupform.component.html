@@ -1,0 +1,38 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<div mat-dialog-content class="container"  >
+<p>popupform works!</p>
+
+<form [formGroup]="popupForms"  >
+   
+    <label for="productId">Product_id</label>
+    <select id="productId" formControlName="Product_id" (change)="onProductIdChange($event)"  >
+      <option   *ngFor="let product of products"  [value]="product.pid" [disabled]="isViewing" >{{ product.pid }}</option>
+    </select>
+ 
+  
+ 
+    <label for="productName">Product Name</label>  
+    <input matInput type="text" id="productName" formControlName="Product_Name"  [readOnly]="isViewing"><br>
+ 
+    <label for="quantity"> Quantity</label> 
+    <input   type="text" id="quantity"formControlName="Quantity" (input)="onQuantityChange() "   [readOnly]="isViewing" ><br>
+ 
+    <label for="expiry">Expiry date </label>
+    <input   type="text" id="expiry" formControlName="Expiry_date"  [readOnly]="isViewing"><br>
+   
+    <label for="manufacture">Manufacture date</label>
+    <input   type="text " id="manufacture" formControlName="Manufacture"  [readOnly]="isViewing"><br>
+ 
+    <label for="price">Price </label>
+    <input    type="text" id="price" formControlName="Price"  [readOnly]="isViewing"><br>
+ 
+    <label for="totalPrice">Total price </label>
+    <input    type="text" id="totalPrice" formControlName="totalPrice"  [readOnly]="isViewing"  (click)="calculateTotalPrice()"  ><br>
+ 
+    <button (click)="onCancelClick()">Cancel</button>
+    <button (click)="onSubmit( )" [disabled]="!popupForms.valid"   >submit</button>
+   
+</form> 
+</div>

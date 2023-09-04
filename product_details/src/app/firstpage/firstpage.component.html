@@ -1,0 +1,80 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="firstpage.component.css" rel="stylesheet">
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container"> <br><br>
+	<nav class="navbar navbar-expand-lg navbar-light bg-warning">
+        <label>PRODUCT LIST</label>
+            <div class="collapse navbar-collapse" >
+              <ul class="navbar-nav ml-auto topnav">
+                    <li >
+                    <a class="btn btn-primary"    type="button"    (click)="openDialog()">ADD PRODUCT</a>
+                    </li>
+              </ul>
+            </div>
+    </nav>
+
+    <div class="table-wrapper">
+        <table class="fl-table">
+            <thead>
+                <tr>
+                    <th>ProductId</th>
+                    <th>Product name</th>
+                    <th>Quantity</th>
+                    <th>Expiry date</th>
+                    <th>Manufacturing date</th>
+                    <th>Price</th>
+                    <th>Total price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <ng-container *ngFor="let data of products let i = index">
+                    <tr>
+                        <td>{{data.Product_id}}</td>
+                        <td>{{data.Product_Name}}</td>
+                        <td>{{data.Quantity}}</td>
+                        <td>{{data.Expiry_date}}</td>
+                        <td >{{data.Manufacture}}</td>
+                        <td>{{data.Price}}</td>
+                        <td>{{data.totalPrice}}</td>
+                        <button (click)="editItem(i,'edit')" >Edit</button>
+                        <button (click)="viewDialog(i,'view')">view</button>
+                        <button (click)="deleteUser(i)">delete</button>
+                    </tr>
+                </ng-container>
+            <tbody>
+        </table>
+    </div>
+</div>
+<router-outlet></router-outlet> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
